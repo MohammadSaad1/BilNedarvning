@@ -12,6 +12,7 @@ namespace Nedarvning
 
         public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, bool partikelfilter) : base (mærke, registringsnr, prisexafgift, købsår, kmprliter)
         {
+          
             this.PartikelFilter = partikelfilter;
         }
 
@@ -32,7 +33,24 @@ namespace Nedarvning
             return sum;
         }
 
+        public override double RegistreringsAfgift()
+        {
+            if (KøbsÅr <= 2014)
+            {
+                double RegistreringsAfgift = ((1.05 * 80500) + (1.80 * (BilPrisExAfgift - 80500)));
+                return RegistreringsAfgift;
+            }
 
-
+            else if (KøbsÅr >= 2015)
+            {
+                double RegistreringsAfgift = ((1.05 * 80500) + (1.80 * (BilPrisExAfgift - 81700)));
+                return RegistreringsAfgift;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
     }
 }

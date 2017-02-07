@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Nedarvning
 {
-    public class Bil
+    public abstract class Bil
     {
         public int BilPrisExAfgift { get; private set; }
         public int KøbsÅr { get; private set; }
@@ -18,9 +18,9 @@ namespace Nedarvning
 
 
 
-        public virtual double RegistreringsAfgift()
-        {
-            if (KøbsÅr <= 2014)
+        public abstract double RegistreringsAfgift();
+        
+      /*      if (KøbsÅr <= 2014)
             {
                 double RegistreringsAfgift = ((1.05 * 80500) + (1.80 * (BilPrisExAfgift - 80500)));
                 return RegistreringsAfgift;
@@ -36,7 +36,7 @@ namespace Nedarvning
                 return 0;
             }
         }
-
+        */
        
 
         public double TotalPris()
@@ -55,6 +55,7 @@ namespace Nedarvning
             this.BilPrisExAfgift = BilPrisExAfgift;
             this.KøbsÅr = KøbsÅr;
             this.KmPrLiter = KmPrLiter;
+            this.RegistreringsNr = RegistreringsNr;
         }
 
         
