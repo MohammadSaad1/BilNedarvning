@@ -10,11 +10,29 @@ namespace Nedarvning
     {
         public bool PartikelFilter { get; private set; }
 
-
-        public override double RegistreringsAfgift()
+        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter, bool partikelfilter) : base (mærke, registringsnr, prisexafgift, købsår, kmprliter)
         {
-            return base.RegistreringsAfgift();
+            this.PartikelFilter = partikelfilter;
         }
+
+        public DieselBil(string mærke, string registringsnr, int prisexafgift, int købsår, int kmprliter) : this(mærke, registringsnr, prisexafgift, købsår, kmprliter, true)
+        {
+           
+        }
+
+
+        public override int HalvÅrligEjerafgift()
+        {
+            int sum = 0;
+
+            if (PartikelFilter == false)
+            {
+                return sum += 500;
+            }
+            return sum;
+        }
+
+
 
     }
 }

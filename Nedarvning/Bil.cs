@@ -49,7 +49,7 @@ namespace Nedarvning
             return 1000;
         }
 
-        public Bil (string Mærke, int PrisExAfgift, int KøbsÅr, int KmPrLiter)
+        public Bil (string Mærke,string RegistreringsNr, int PrisExAfgift, int KøbsÅr, int KmPrLiter)
         {
             this.Mærke = Mærke;
             this.BilPrisExAfgift = BilPrisExAfgift;
