@@ -30,6 +30,22 @@ namespace Nedarvning
             {
                 return sum += 500;
             }
+
+            if (KmPrLiter <15)
+            {
+                return 2000;
+            }
+
+            else if ((KmPrLiter ==25) && (KmPrLiter ==15))
+            {
+                return 1000;
+            }
+
+            else if (KmPrLiter >25 )
+            {
+                return 350;
+            }
+
             return sum;
         }
 
